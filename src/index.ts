@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 import commander from "commander";
+import GitRevue from "@gitrevue/sdk";
 // @ts-ignore
 import HttpError from "@gitrevue/sdk/dist/HttpError";
-import api from './api';
 import Env from './Env';
-import { resolveGlobs, getSize } from "./utils";
+import {resolveGlobs, getSize, getConfig} from "./utils";
 const { version, description } = require('../package.json')
 
 const program = new commander.Command();
@@ -30,7 +30,9 @@ program
         console.table(assets)
 
         if (!program.dryRun) {
+            const config = getConfig()
             const env = Env.detect()
+            const api = new GitRevue(config)
 
             api.assets.create(`${env.owner}/${env.repository}`, env.commit, assets)
                 .then((response) => {
