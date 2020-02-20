@@ -6,3 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [v0.1.1](https://github.com/gitrevue/cli/releases/tag/v0.1.1) 2020-02-20
+
+### Fixed
+
+- Include `@gitrevue/sdk` as a dependency
+
+## [v0.1.0](https://github.com/gitrevue/cli/releases/tag/v0.1.0) - 2020-02-20
+
+Initial release. Allows you to publish asset information to the GitRevue API.
