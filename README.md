@@ -8,7 +8,7 @@
 ## Installing
 
 ```bash
-npm install -g @girevue/cli
+npm install -g @gitrevue/cli
 ```
 
 ## License
