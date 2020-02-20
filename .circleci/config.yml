@@ -1,0 +1,30 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: ~/gitrevue-cli
+
+    docker:
+      - image: circleci/node:10
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install dependencies
+          command: npm ci
+
+      - run:
+          name: Compile typescript
+          command: npm run build
+
+      - run:
+          name: Jest
+          command: npm test
+
+workflows:
+  version: 2
+
+  build:
+    jobs:
+      - build

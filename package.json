@@ -1,0 +1,59 @@
+{
+  "name": "@gitrevue/cli",
+  "version": "0.0.0",
+  "description": "GitRevue CLI - Simplify your code reviews",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "npm run build:watch",
+    "clean": "rimraf ./dist",
+    "build": "npm run clean && tsc",
+    "build:watch": "npm run build && tsc --watch",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
+    "lint": "tslint src/**/*.ts",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:staged": "./node_modules/.bin/pretty-quick --staged",
+    "pretest": "npm run build",
+    "prepare": "npm run build"
+  },
+  "author": "Wade Urry <gitrevue@iwader.co.uk>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitrevue/cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gitrevue/cli/issues"
+  },
+  "homepage": "https://github.com/gitrevue/cli#readme",
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "bin": {
+    "gitrevue": "./dist/index.js"
+  },
+  "dependencies": {
+    "commander": "^4.1.1",
+    "glob": "^7.1.6"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/jest": "^25.1.2",
+    "@types/node": "^13.7.1",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "1.19.1",
+    "pretty-quick": "^2.0.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^25.2.0",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.1.0",
+    "typescript": "^3.7.5"
+  },
+  "pre-commit": [
+    "lint:staged"
+  ]
+}
