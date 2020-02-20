@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Use https://app.gitrevue.io/ as api endpoint
 - Suggest correct URL to create an api token
 
+### Changed
+
+- No longer logs the api response when publishing asset information
+
 ## [v0.1.1](https://github.com/gitrevue/cli/releases/tag/v0.1.1) 2020-02-20
 
 ### Fixed
