@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - No longer requires `GITREVUE_TOKEN` to be set when calling commands that don't interact with the api
 - Use https://app.gitrevue.io/ as api endpoint
 - Suggest correct URL to create an api token
+- Capitalization of the GitLab driver so it now works on case-sensitive file systems.
 
 ### Changed
 

@@ -2,7 +2,7 @@ import Driver from "./Driver";
 import DefaultDriver from "./Drivers/Default";
 import CircleCI from "./Drivers/CircleCI";
 import GitHub from "./Drivers/GitHub";
-import GitLab from "./Drivers/Gitlab";
+import GitLab from "./Drivers/GitLab";
 import TravisCI from "./Drivers/TravisCI";
 
 class Env {
