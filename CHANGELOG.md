@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - No longer requires `GITREVUE_TOKEN` to be set when calling commands that don't interact with the api
+- Use https://app.gitrevue.io/ as api endpoint
 
 ## [v0.1.1](https://github.com/gitrevue/cli/releases/tag/v0.1.1) 2020-02-20
 

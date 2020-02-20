@@ -19,7 +19,7 @@ export const getSize = (path: string): number => {
 export const getConfig = (): Config => {
     const config: Config = {
         token: process.env.GITREVUE_TOKEN,
-        url: (process.env.GITREVUE_URL || 'https://gitrevue.io').replace(/\/+$/gm, ''),
+        url: (process.env.GITREVUE_URL || 'https://app.gitrevue.io').replace(/\/+$/gm, ''),
     }
 
     if (!config.token) {
