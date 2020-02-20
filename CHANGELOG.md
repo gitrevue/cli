@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - No longer logs the api response when publishing asset information
+- Applied TSLint across the code base
 
 ## [v0.1.1](https://github.com/gitrevue/cli/releases/tag/v0.1.1) 2020-02-20
 
