@@ -22,12 +22,12 @@ program
   .action((name, globs, program) => {
     const paths = resolveGlobs(globs);
     const artifacts = paths.reduce((artifacts, path: string) => {
-      const asset = {
+      const artifact = {
         path,
         bytes: getSize(path)
       };
 
-      return artifacts.concat(asset);
+      return artifacts.concat(artifact);
     }, []);
 
     console.table(artifacts);
