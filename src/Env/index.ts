@@ -1,15 +1,11 @@
 import Driver from "./Driver";
 import DefaultDriver from "./Drivers/Default";
 import CircleCI from "./Drivers/CircleCI";
-import GitHub from "./Drivers/GitHub";
-import GitLab from "./Drivers/GitLab";
 import TravisCI from "./Drivers/TravisCI";
 
 class Env {
   public static readonly drivers = [
     CircleCI,
-    GitHub,
-    GitLab,
     TravisCI,
 
     // Default driver should always be last
