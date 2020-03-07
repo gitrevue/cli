@@ -43,6 +43,10 @@ class Env {
   get commit(): string {
     return this.driver.commit();
   }
+
+  get pullRequest(): number | null {
+    return this.driver.pullRequest();
+  }
 }
 
 export default Env;

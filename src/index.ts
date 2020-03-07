@@ -38,7 +38,12 @@ program
       const api = new GitRevue(config);
 
       api.artifacts
-        .create(`${env.owner}/${env.repository}`, env.commit, artifacts)
+        .create(
+          `${env.owner}/${env.repository}`,
+          env.commit,
+          artifacts,
+          env.pullRequest
+        )
         .catch(async err => {
           if (err instanceof HttpError) {
             console.error(await err.body());
