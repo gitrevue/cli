@@ -44,7 +44,7 @@ program
           artifacts,
           env.pullRequest
         )
-        .catch(async err => {
+        .catch(async (err: Error | HttpError) => {
           if (err instanceof HttpError) {
             console.error(await err.body());
           }
