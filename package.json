@@ -32,7 +32,7 @@
     "gitrevue": "./dist/index.js"
   },
   "dependencies": {
-    "@gitrevue/sdk": "^0.1.0",
+    "@gitrevue/sdk": "^0.2.0",
     "commander": "^4.1.1",
     "glob": "^7.1.6"
   },

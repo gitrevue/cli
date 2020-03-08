@@ -28,6 +28,8 @@ abstract class AbstractDriver implements Driver {
   abstract owner(): string;
 
   abstract repository(): string;
+
+  abstract pullRequest(): number | null;
 }
 
 export default AbstractDriver;

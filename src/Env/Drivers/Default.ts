@@ -1,27 +1,35 @@
-import Driver from '../Driver'
+import Driver from "../Driver";
 
 class Default extends Driver {
-
-    static validate(): boolean {
-        if (process.env.GITREVUE_OWNER && process.env.GITREVUE_REPOSITORY && process.env.GITREVUE_COMMIT) {
-            return true
-        }
-
-        return false
+  static validate(): boolean {
+    if (
+      process.env.GITREVUE_OWNER &&
+      process.env.GITREVUE_REPOSITORY &&
+      process.env.GITREVUE_COMMIT
+    ) {
+      return true;
     }
 
-    owner(): string {
-        return process.env.GITREVUE_OWNER;
-    }
+    return false;
+  }
 
-    repository(): string {
-        return process.env.GITREVUE_REPOSITORY;
-    }
+  owner(): string {
+    return process.env.GITREVUE_OWNER;
+  }
 
-    commit(): string {
-        return process.env.GITREVUE_COMMIT;
-    }
+  repository(): string {
+    return process.env.GITREVUE_REPOSITORY;
+  }
 
+  commit(): string {
+    return process.env.GITREVUE_COMMIT;
+  }
+
+  pullRequest(): number | null {
+    if (!process.env.GITREVUE_PULL_REQUEST) return null;
+
+    return parseInt(process.env.GITREVUE_PULL_REQUEST, 10);
+  }
 }
 
-export default Default
+export default Default;

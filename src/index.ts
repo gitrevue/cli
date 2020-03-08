@@ -13,33 +13,38 @@ program.version(version);
 program.description(description);
 
 program
-  .name("assets")
+  .name("artifacts")
   .arguments("<glob> [globs...]")
   .option(
     "--dry-run",
-    "Output asset information without publishing to the GitRevue api"
+    "Output artifact information without publishing to the GitRevue api"
   )
   .action((name, globs, program) => {
     const paths = resolveGlobs(globs);
-    const assets = paths.reduce((assets, path: string) => {
-      const asset = {
+    const artifacts = paths.reduce((artifacts, path: string) => {
+      const artifact = {
         path,
         bytes: getSize(path)
       };
 
-      return assets.concat(asset);
+      return artifacts.concat(artifact);
     }, []);
 
-    console.table(assets);
+    console.table(artifacts);
 
     if (!program.dryRun) {
       const config = getConfig();
       const env = Env.detect();
       const api = new GitRevue(config);
 
-      api.assets
-        .create(`${env.owner}/${env.repository}`, env.commit, assets)
-        .catch(async err => {
+      api.artifacts
+        .create(
+          `${env.owner}/${env.repository}`,
+          env.commit,
+          artifacts,
+          env.pullRequest
+        )
+        .catch(async (err: Error | HttpError) => {
           if (err instanceof HttpError) {
             console.error(await err.body());
           }

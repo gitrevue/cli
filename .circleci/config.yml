@@ -20,7 +20,7 @@ jobs:
 
       - run:
           name: Jest
-          command: npm test
+          command: npm test -- --passWithNoTests
 
 workflows:
   version: 2
