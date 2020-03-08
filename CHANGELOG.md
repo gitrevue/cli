@@ -7,9 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.2.0](https://github.com/gitrevue/cli/releases/tag/v0.2.0) 2020-03-08
+
 ### Changed
 
 - Renamed `assets` command to `artifacts`
+- Detect and send pull request number when reporting artifacts
 
 ## [v0.1.3](https://github.com/gitrevue/cli/releases/tag/v0.1.3) 2020-02-29
 
